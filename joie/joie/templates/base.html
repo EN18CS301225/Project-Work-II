@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Joie</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<link rel="stylesheet" href="{% static 'homepage/css/bootstrap.min.css' %} ">
+<link rel="stylesheet" href="{% static 'homepage/css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/css/owl.theme.css' %} ">
+<link rel="stylesheet" href="{% static 'homepage/css/owl.carousel.css' %} ">
+
+<!-- Main css -->
+<link rel="stylesheet" href="{% static 'homepage/css/style.css'%} ">
+
+<!-- Google Font -->
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lora:700italic' rel='stylesheet' type='text/css'>
+ {% block css %}
+ 
+ {% endblock css %}
+
+
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+
+<!-- =========================
+     PRE LOADER       
+============================== -->
+<div  class="preloader">
+
+	<div class="sk-spinner sk-spinner-pulse"></div>
+
+</div>
+
+
+<!-- =========================
+    NAVIGATION SECTION   
+============================== -->
+<div class="navbar navbar-default navbar-fixed-top sticky-navigation" role="navigation">
+	<div class="container">
+
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+			<a href="#" class="navbar-brand">Joie</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right main-navigation">
+				<li><a href="{% url 'public:index' %}" class="smoothScroll">Home</a></li>
+				<li><a href="{% url 'public:index' %}" class="smoothScroll">About</a></li>
+				<li><a href="{% url 'public:index' %}" class="smoothScroll">Our Services</a></li>
+				<li><a href="{% url 'public:index' %}" class="smoothScroll">Blog</a></li>
+				<li><a href="{% url 'public:index' %}" class="smoothScroll">Testimonials</a></li>
+				{% if user.is_authenticated %}
+					<li class="dropdown">
+					
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							href="#">
+							<div style="padding-top:18px;"></div>
+								<img src="{% static 'homepage/images/user.png' %}" class="img-responsive" alt="user">
+								
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">{{user.username}}</a>
+							<li><a href="{% url 'accounts:logout' %}"> Logout </a></li>
+							<!-- links -->
+							</ul>
+					</li>
+				
+				{% else %}
+					<li>
+						<a href="{% url 'accounts:login_attempt' %}"> Login </a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
+
+	</div>
+</div>
+<section>
+<div class="container">
+<div class="row">
+
+ {% block content %}
+ {% endblock %}
+ </div>
+ </div>
+</section>
+
+<!-- =========================
+    FOOTER SECTION   
+============================== -->
+<footer>
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.6s">
+				<h2>About Joie</h2>
+				<p>This site has been developed in 2021 by Samriddhi Kakkar, Saloni Agrawal, Pusha Wore, and Ravi Jajodia</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-5 col-sm-4"  data-wow-delay="0.9s">
+				<h2>Contact Us</h2>
+					<div>
+						<h5>Mobile number</h5>
+						<h4>+1234567890</h4>
+					</div>
+					<div>
+						<h5>Email</h5>
+						<h4>connect.joie.team@gmail.com</h4>
+					</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-4" data-wow-delay="1s">
+				<h2>Follow us</h2>
+				<ul class="social-icon">
+					<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="1s"></a></li>
+					<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
+					<li><a href="#" class="fa fa-dribbble wow fadeIn" data-wow-delay="1.6s"></a></li>
+					<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
+					<li><a href="#" class="fa fa-google-plus wow fadeIn" data-wow-delay="2s"></a></li>
+				</ul>
+			</div>
+
+			<div class="clearfix"></div>
+			
+		</div>
+	</div>
+</footer>
+
+<!-- =========================
+     SCRIPTS   
+============================== -->
+<script src="{% static 'homepage/js/jquery.js'%}"></script>
+<script src="{% static 'homepage/js/bootstrap.min.js'%}"></script>
+<script src="{% static 'homepage/js/jquery.parallax.js'%}"></script>
+<script src="{% static 'homepage/js/jquery.nav.js' %}"></script>
+<script src="{% static 'homepage/js/jquery.backstretch.min.js' %}"></script>
+<script src="{% static 'homepage/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'homepage/js/smoothscroll.js' %}"></script>
+<script src="{% static 'homepage/js/wow.min.js' %}"></script>
+<script src="{% static 'homepage/js/custom.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% block js %}{% endblock js %}
+
+</body>
+</html>

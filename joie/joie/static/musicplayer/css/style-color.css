@@ -1,0 +1,232 @@
+::-moz-selection { /* Code for Firefox */
+    color: #000;
+    background: #AB7CDC;
+  }
+  
+  ::selection {
+    color: #000;
+    background: #AB7CDC;
+  }
+.h-twitter:hover {
+  background: #2aa4e3 !important;
+}
+.h-facebook:hover {
+  background: #375b97 !important;
+}
+.h-google:hover {
+  background: #AB7CDC !important;
+}
+.h-linkedin:hover {
+  background: #2e8fe0 !important;
+}
+.btn-theme {
+  background: #AB7CDC;
+  color: #000;
+  box-shadow: none;
+}
+.btn-theme:hover {
+  color: #000;
+ background: #AB7CDC;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.btn-theme:active,
+.btn-theme:focus {
+  color: #000;
+  box-shadow: none;
+}
+a {
+  color: #AB7CDC;
+}
+a:focus,
+a:hover {
+  color: #AB7CDC;
+}
+.theme-color {
+  color: #AB7CDC;
+}
+.white {
+  color: #000;
+}
+.gray {
+  color: #757c7e;
+}
+.black {
+  color: #333;
+}
+.red {
+  color: #AB7CDC;
+}
+.green {
+  color: #53ba83;
+}
+.lblue {
+  color: #69d2e7;
+}
+.blue {
+  color: #3da1e3;
+}
+.orange {
+  color: #f38630;
+}
+.yellow {
+  color: #ffca1b;
+}
+.purple {
+  color: #ba01ff;
+}
+.pink {
+  color: #ff0091;
+}
+.brown {
+  color: #a37e58;
+}
+.bg-theme {
+  background: #AB7CDC;
+}
+.bg-white {
+  background-color: #000;
+}
+.bg-gray {
+  background-color: #757c7e;
+}
+.bg-black {
+  background-color: #333;
+}
+.bg-red {
+  background-color: #AB7CDC;
+}
+.bg-green {
+  background-color: #53ba83;
+}
+.bg-lblue {
+  background-color: #69d2e7;
+}
+.bg-blue {
+  background-color: #3da1e3;
+}
+.bg-orange {
+  background-color: #f38630;
+}
+.bg-yellow {
+  background-color: #ffca1b;
+}
+.bg-purple {
+  background-color: #ba01ff;
+}
+.bg-pink {
+  background-color: #ff0091;
+}
+.bg-brown {
+  background-color: #a37e58;
+}
+.label-theme {
+  background: #AB7CDC;
+}
+.navbar-default .navbar-nav li a {
+  color: #000;
+}
+.navbar-default .navbar-nav li a:active,
+.navbar-default .navbar-nav li a:focus,
+.navbar-default .navbar-nav li a:hover {
+  color: #AB7CDC;
+}
+.navbar-default .navbar-nav li.active a,
+.navbar-default .navbar-nav li.active a:active,
+.navbar-default .navbar-nav li.active a:focus,
+.navbar-default .navbar-nav li.active a:hover {
+  color: #AB7CDC;
+  background: 0 0;
+}
+.default-heading h2,
+.default-heading-shadow h2 {
+  border: 2px solid #AB7CDC;
+}
+.default-heading h2:after,
+.default-heading-shadow h2:after {
+  border-top-color: #AB7CDC;
+}
+.promo .promo-element .promo-link {
+  color: #AB7CDC;
+  background: #333;
+}
+.promo .promo-element .promo-link:hover {
+  color: #AB7CDC;
+}
+.hero-playlist .playlist-content .playlist-number:hover {
+  background: #AB7CDC;
+  border-color: #AB7CDC;
+}
+.hero-playlist .playlist-content .playlist-number:hover .music-icon a,
+.hero-playlist .playlist-content .playlist-number:hover .song-info h4,
+.hero-playlist .playlist-content .playlist-number:hover .song-info p {
+  color: #000;
+}
+.cta .cta-element,
+.featured .featured-item .figure p {
+  background: #AB7CDC;
+}
+.news-letter .news-content p strong {
+  color: #AB7CDC;
+}
+.portfolio .portfolio-content .item .p-transparent,
+.work-with-us .why-content .why-item:hover {
+  background: #AB7CDC;
+}
+.portfolio .portfolio-content .item .p-hover a {
+  color: #AB7CDC;
+}
+.portfolio .portfolio-content .item .p-hover a:hover {
+ background: #AB7CDC;
+  color: #000;
+}
+.events .events-item .figure .img-hover {
+  background: rgba(242, 48, 48, 0.6);
+}
+.events .events-item .figure .img-hover a {
+  color: #AB7CDC;
+  background: #333;
+}
+.events .events-item .figure .img-hover a:hover {
+  color: #AB7CDC;
+}
+.events .events-item .event-info hr {
+  border-color: #AB7CDC;
+}
+.about .about-what-we .what-we-item h3 i {
+  color: #AB7CDC;
+}
+.about .team .team-member .member-img .social {
+  background: #AB7CDC;
+}
+.about .team .team-member .member-img .social a:hover i {
+ background: #AB7CDC;
+}
+.about .team .team-member .designation {
+  color: #757c7e;
+}
+.meet .meet-map .map-marker .um-map-marker {
+  background: #AB7CDC;
+}
+.contact .contact-item i {
+  color: #AB7CDC;
+}
+.contact .form-content form .form-control:focus {
+  box-shadow: 0 0 5px #AB7CDC;
+  border: 1px solid #AB7CDC;
+}
+.landing-1 .landing1-content i {
+  color: #AB7CDC;
+  border: 10px double #AB7CDC;
+}
+footer {
+  border-top: 5px solid #AB7CDC;
+}
+footer .social a:hover {
+  background: #fff;
+  color: #000;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.totop a {
+  background: #AB7CDC;
+}

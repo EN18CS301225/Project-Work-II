@@ -1,0 +1,380 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Joie</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<link rel="stylesheet" href="{% static 'homepage/css/bootstrap.min.css' %} ">
+<link rel="stylesheet" href="{% static 'homepage/css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/css/owl.theme.css' %} ">
+<link rel="stylesheet" href="{% static 'homepage/css/owl.carousel.css' %} ">
+
+<!-- Main css -->
+<link rel="stylesheet" href="{% static 'homepage/css/style.css'%} ">
+
+<!-- Google Font -->
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lora:700italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+
+<!-- =========================
+     PRE LOADER       
+============================== -->
+<div  class="preloader">
+
+	<div class="sk-spinner sk-spinner-pulse"></div>
+
+</div>
+
+
+<!-- =========================
+    NAVIGATION SECTION   
+============================== -->
+<div class="navbar navbar-default navbar-fixed-top sticky-navigation" role="navigation">
+	<div class="container">
+
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+			<a href="#" class="navbar-brand">Joie</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right main-navigation">
+				<li><a href="#home" class="smoothScroll">Home</a></li>
+				<li><a href="#overview" class="smoothScroll">About</a></li>
+				<li><a href="#Services" class="smoothScroll">Our Services</a></li>
+				<li><a href="#blog" class="smoothScroll">Blog</a></li>
+				<li><a href="#testimonial" class="smoothScroll">Testimonials</a></li>
+				{% if user.is_authenticated %}
+					<li class="dropdown">
+					
+							<a class="dropdown-toggle"
+							data-toggle="dropdown"
+							href="#">
+							<div style="padding-top:18px;"></div>
+								<img src="{% static 'homepage/images/user.png' %}" class="img-responsive" alt="user">
+								
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">{{user.username}}</a>
+							<li><a href="{% url 'accounts:logout' %}"> Logout </a></li>
+							<!-- links -->
+							</ul>
+					</li>
+				
+				{% else %}
+					<li>
+						<a href="{% url 'accounts:login_attempt' %}"> Login </a>
+					</li>
+				{% endif %}
+				
+
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- =========================
+    HOME SECTION   
+============================== -->
+<section id="home" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-offset-1 col-md-10 col-sm-12">
+				<h3 class="wow bounceIn" data-wow-delay="0.9s">Hello! you are welcome to</h3>
+				<h1 class="wow fadeInUp" data-wow-delay="1.6s">A Safe Place<br>Joie</h1>
+				<a href="#overview" class="wow fadeInUp smoothScroll btn btn-default" data-wow-delay="2s">LEARN MORE</a>
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+
+<!-- =========================
+    OVERVIEW SECTION   
+============================== -->
+<section id="overview" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 col-sm-12">
+				<img src="{% static 'homepage/images/Mental health-amico.png' %}" class="img-responsive" alt="Overview">
+				<blockquote class="wow fadeInUp" data-wow-delay="1.9s">“Emotional pain is not something that should be hidden away and never spoken about. There is truth in your pain, there is growth in your pain, but only if it’s first brought out into the open.”</blockquote>
+			</div>
+
+			<div class="col-md-1"></div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="1s">
+				<div class="overview-detail">
+					<h2>About Joie</h2>
+					<p>Joie is a free, easy to use, and safe website to address you mental health issue from a root level. Feel free to be yourself here.</p>
+					<p>Take a deep breath. Relax. Take your time. Lets move forard, on step at a time.</p>
+					<a href="#Services" class="btn btn-default smoothScroll">Let us begin</a>
+				</div>
+			</div>
+
+			<div class="col-md-1"></div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    TRAINER SECTION   
+============================== -->
+
+<section id="Services" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="1.3s">
+				<h2>Our Services</h2>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.9s">
+				<div class="trainer-thumb">
+					<img src="{% static 'homepage/images/Checklist-pana.png' %}" class="img-responsive" alt="Trainer">
+						<div class="trainer-overlay">
+							<div class="trainer-des">
+							
+							{% url 'todolist:todolist' as todolist_url %}
+								
+								<a href="{{todolist_url}}"><h2>To Do List</h2> </a>
+							</div>
+						</div>
+				</div>
+				<p>Write out your targets for the day and enhance and track your productivity for the day.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="2s">
+				<div class="trainer-thumb">
+					<img src="{% static 'homepage/images/Mental health-bro.png' %}" class="img-responsive" alt="Trainer">
+						<div class="trainer-overlay">
+							<div class="trainer-des">
+							{% url 'video_content:meditation' as videos_url %}
+								
+								<a href="{{videos_url}}"><h2>Meditation Exercises</h2> </a>
+							</div>
+						</div>
+				</div>
+				<p>Meditation is a process of lightening up, of trusting the goodness of what we have and who we are, and of realizing that any wisdom that exists, exists in what we already have.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="2.3s">
+				<div class="trainer-thumb">
+					<img src="{% static 'homepage/images/Voice assistant-amico.png' %}" class="img-responsive" alt="Trainer">
+						<div class="trainer-overlay">
+							<div class="trainer-des">
+							{% url 'recorder:audionotes' as audionotes_url %}
+								
+								<a href="{{audionotes_url}}"><h2>Audio Notes</h2></a>
+							
+							</div>
+						</div>
+				</div>
+				<p>Speak out whatever is bothering your or is in your mind. Venting out helps alot to release stress and relax your mind.</p>
+			</div>
+		<div class="row" style="margin-left: 15rem;">
+			<div class="wow fadeInUp col-md-5 col-sm-6" data-wow-delay="2.3s">
+				<div class="trainer-thumb">
+					<img src="{% static 'homepage/images/Feed-rafiki.png' %}" class="img-responsive" alt="Trainer">
+						<div class="trainer-overlay">
+							<div class="trainer-des">
+							{% url 'affirmation_reading:reading' as affirmation_reading_url %}
+								
+								<a href="{{affirmation_reading_url}}"><h2>Affirmation Reading</h2></a>
+							</div>
+						</div>
+				</div>
+				<p>You're using affirmations to help change long-standing patterns and beliefs. A good way to bring this change about is to act as if you've already succeeded. An affirmation, on the other hand, strengthens your confidence by reminding you of what you can do right now.</p>
+			</div>
+			<div class="wow fadeInUp col-md-5 col-sm-6" data-wow-delay="2.3s">
+				<div class="trainer-thumb">
+					<img src="{% static 'homepage/images/Novelist writing-amico.png'%} " class="img-responsive" alt="Trainer">
+						<div class="trainer-overlay">
+							<div class="trainer-des">
+							{% url 'entry:gratitude' as gratitude_url %}
+							<a href="{{gratitude_url}}"><h2>Gratitude Journeling</h2></a>
+								
+							</div>
+						</div>
+				</div>
+				<p>A gratitude journal is a diary of things for which one is grateful. Gratitude journals are used by individuals who wish to focus their attention on the positive things in their lives. Gratitude, the feeling of appreciation or thanks, is one step forward to positive thinking.</p>
+			</div>
+		</div>	
+
+		</div>
+	</div>
+</section>
+
+
+
+
+
+<!-- =========================
+    BLOG SECTION   
+============================== -->
+<section id="blog" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 text-center">
+				<h2>Blog-Tips for self-care</h2>
+				<p>Get various resources from where you can refer how to prioritize your mental health</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.9s">
+				<div class="blog-thumb">
+					<span class="blog-date">Happier</span>
+					<h3 class="blog-title"><a href="https://www.happier.com/blog/">They help you strengthen your emotional fitness skills so you can struggle less and thrive more in work and life. </a></h3>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.3s">
+				<div class="blog-thumb1">
+					<span class="blog-date">The Greater Good</span>
+					<h3 class="blog-title"><a href="https://greatergood.berkeley.edu/">The Greater Good Science Center studies the psychology, sociology, and neuroscience of well-being, and teaches skills that foster a thriving, resilient, and compassionate society.</a></h3>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.6s">
+				<div class="blog-thumb3">
+					<span class="blog-date">Positive Psychology</span>
+					<h3 class="blog-title"><a href="https://positivepsychology.com/">It is a science-based online resource packed full of courses, techniques, tools, and tips to help you put positive psychology into practice every day.</a></h3>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.9s">
+				<div class="blog-thumb4">
+					<span class="blog-date">Fulfillment Daily</span>
+					<h3 class="blog-title"><a href="blog-single.html">The mission of Fulfillment Daily is to inspire readers with tools for a fulfilling life through science-backed news you can trust. </a></h3>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+
+
+
+<!-- =========================
+    TESTIMONIAL SECTION   
+============================== -->
+<section id="testimonial" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<!-- Testimonial Owl Carousel section
+			================================================== -->
+			<div id="owl-testimonial" class="owl-carousel">
+
+				<div class="item col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 wow fadeInUp" data-wow-delay="0.6s">
+					<i class="fa fa-quote-left"></i>
+					<h3>This is very helpful. It helps me whenever I'm sad or can't think of any ways to settle my problems.</h3>
+					<h4>Asha Khanna</h4>
+				</div>
+
+				<div class="item col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 wow fadeInUp" data-wow-delay="0.6s">
+					<i class="fa fa-quote-left"></i>
+					<h3>Love this app personally! It's a very calming and meditating website for stress and very stressful situations. Personally this, site has helped me alot through out the weeks. </h3>
+					<h4>Josh Smith</h4>
+				</div>
+
+				<div class="item col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 wow fadeInUp" data-wow-delay="0.6s">
+					<i class="fa fa-quote-left"></i>
+					<h3>Of all the sites I've tried to help my mental state, this was the only effective one. I have multiple mental illnesses that landed me in very bad places and can even be life threatening, so any and all effort to stay calm and remind myself of happier things is literally life saving.</h3>
+					<h4>Mark Otto</h4>
+				</div>
+
+				<div class="item col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 wow fadeInUp" data-wow-delay="0.6s">
+					<i class="fa fa-quote-left"></i>
+					<h3>This site has helped me to move on when I get stuck feeling depressed and anxious. The UI really helps because it feels like your doing something that is worthwile.</h3>
+					<h4>Shelly Erin</h4>
+				</div>
+				
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    FOOTER SECTION   
+============================== -->
+<footer>
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.6s">
+				<h2>About Joie</h2>
+				<p>This site has been developed in 2021 by Samriddhi Kakkar, Saloni Agrawal, Pusha Wore, and Ravi Jajodia</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-5 col-sm-4"  data-wow-delay="0.9s">
+				<h2>Contact Us</h2>
+					<div>
+						<h5>Mobile number</h5>
+						<h4>+1234567890</h4>
+					</div>
+					<div>
+						<h5>Email</h5>
+						<h4>connect.joie.team@gmail.com</h4>
+					</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-4" data-wow-delay="1s">
+				<h2>Follow us</h2>
+				<ul class="social-icon">
+					<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="1s"></a></li>
+					<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
+					<li><a href="#" class="fa fa-dribbble wow fadeIn" data-wow-delay="1.6s"></a></li>
+					<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
+					<li><a href="#" class="fa fa-google-plus wow fadeIn" data-wow-delay="2s"></a></li>
+				</ul>
+			</div>
+
+			<div class="clearfix"></div>
+			
+		</div>
+	</div>
+</footer>
+
+<!-- =========================
+     SCRIPTS   
+============================== -->
+<script src="{% static 'homepage/js/jquery.js'%}"></script>
+<script src="{% static 'homepage/js/bootstrap.min.js'%}"></script>
+<script src="{% static 'homepage/js/jquery.parallax.js'%}"></script>
+<script src="{% static 'homepage/js/jquery.nav.js' %}"></script>
+<script src="{% static 'homepage/js/jquery.backstretch.min.js' %}"></script>
+<script src="{% static 'homepage/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'homepage/js/smoothscroll.js' %}"></script>
+<script src="{% static 'homepage/js/wow.min.js' %}"></script>
+<script src="{% static 'homepage/js/custom.js' %}"></script>
+
+</body>
+</html>
+{% endblock %}

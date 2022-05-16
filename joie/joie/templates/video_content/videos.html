@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+<div class="heading"> Video Gallery </div>
+<div class="video-container">
+
+
+    {% for video in videos %}
+    
+    <div class="video">
+        <video  controls>
+        <source src="{{video.video.url}}" type="video/mp4">
+
+        </video>
+        <div class="content">
+                <div class="play">►</div>
+        </div>
+        <br/>
+        <div style="padding:20px;">{{video.title}}</div>
+    </div>
+    
+    {% endfor %}
+
+
+
+</div>
+</div>
+
+
+{% endblock content %}
+
+
+

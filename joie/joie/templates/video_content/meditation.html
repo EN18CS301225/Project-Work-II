@@ -1,0 +1,97 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<section id="overview" class="parallax-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <img
+          src="{% static 'homepage/images/Mental health-amico.png' %}"
+          class="img-responsive"
+          alt="Overview"
+        />
+        <blockquote class="wow fadeInUp" data-wow-delay="1.9s">
+          “Mindfulness training isn’t limited to meditation, but it’s a great place to start. 
+          Meditation is both a skill and an experience that can positively impact your overall health and happiness.”
+        </blockquote>
+    </div>
+
+      <div class="col-md-1"></div>
+
+      <div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="1s">
+        <div class="overview-detail">
+          <h2>Meditation</h2>
+          <p>
+            When we sit to meditate, we are looking after ourselves in ways that might not at first seem obvious.
+             The benefits of meditation are numerous and varied, and supported by science.
+              Many people start meditating to manage stress, reduce anxiety, and to cultivate peace of mind. 
+              But there are thousands of studies documenting other less-known mindfulness meditation benefits, 
+              which can have a positive impact on mental, physical, and emotional health.
+          </p>
+          	
+            {% if user.is_authenticated %}
+            
+           <a href="{% url 'video_content:index' %}" class="btn btn-default smoothScroll">Watch Videos</a>
+            {% else %}
+             <a href="{% url 'accounts:login_attempt' %}" class="btn btn-default smoothScroll">Watch Videos</a>
+            {% endif %}
+
+         <!-- <a href="{% url 'video_content:index' %}" class="btn btn-default smoothScroll">Watch Videos</a>		-->	
+         
+        </div>
+      </div>
+
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</section>
+<section id="overview" class="parallax-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <img
+          src="{% static 'homepage/images/Mental health-amico.png' %}"
+          class="img-responsive"
+          alt="Overview"
+        />
+        <blockquote class="wow fadeInUp" data-wow-delay="1.9s">
+          “The natural world has intrinsic wisdom that needs no words to convey its magnificence.
+           Music and sound bring our attention to the majesty and mystery of the natural world,
+           both of which are proven to enhance one’s health and well-being.”
+        </blockquote>
+    </div>
+
+      <div class="col-md-1"></div>
+
+      <div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="1s">
+        <div class="overview-detail">
+          <h2>Music Player</h2>
+          <p>
+            Music can improve mood, decrease pain and anxiety, and facilitate
+            opportunities for emotional expression. Research suggests that music
+            can benefit our physical and mental health in numerous ways. Music
+            therapy is used by our hospice and palliative care board-certified
+            music therapist to enhance conventional treatment for a variety of
+            illnesses and disease processes – from anxiety, depression and
+            stress, to the management of pain and enhancement of functioning
+            after degenerative neurologic disorders.
+          </p>
+          	
+            {% if user.is_authenticated %}
+           
+           
+           <a href="{% url 'App:newplayer' %}" class="btn btn-default smoothScroll">Listen to the playlist.</a>
+            {% else %}
+             <a href="{% url 'accounts:login_attempt' %}" class="btn btn-default smoothScroll">Listen to the playlist.</a>
+            {% endif %}
+								
+         
+        </div>
+      </div>
+
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

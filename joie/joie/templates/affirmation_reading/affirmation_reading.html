@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+<section id="overview" class="parallax-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <img
+          src="{% static 'homepage/images/Mental health-amico.png' %}"
+          class="img-responsive"
+          alt="Overview"
+        />
+        <blockquote class="wow fadeInUp" data-wow-delay="1.9s">
+          “Be grateful for what you already have while you pursue your goals.
+If you aren’t grateful for what you already have, what makes you think you would be happy with more.”
+        </blockquote>
+    </div>
+
+      <div class="col-md-1"></div>
+
+      <div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="1s">
+        <div class="overview-detail">
+          <h2>Affirmation Reading</h2>
+          <p>
+            You might consider affirmations to be unrealistic "wishful thinking." But try looking at positive affirmations this way: many of us do repetitive exercises to improve our physical health, and affirmations are like exercises for our mind and outlook. These positive mental repetitions can reprogram our thinking patterns so that, over time, we begin to think – and act – differently.
+
+For example, evidence suggests that affirmations can help you to perform better at work. According to researchers, spending just a few minutes thinking about your best qualities before a high-pressure meeting – a performance review, for example – can calm your nerves, increase your confidence, and improve your chances of a successful outcome.
+          </p>
+          	
+            {% if user.is_authenticated %}
+           
+           
+           <a href="{% url 'affirmation_reading:home' %}" class="btn btn-default smoothScroll">Affirmation Reading</a>
+            {% else %}
+             <a href="{% url 'accounts:login_attempt' %}" class="btn btn-default smoothScroll">Affirmation Reading</a>
+            {% endif %}
+								
+         
+        </div>
+      </div>
+
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
